@@ -1,0 +1,31 @@
+﻿@model LayeredArchitecture.UI.Models.ViewModel.CategoriesModel
+
+@{
+    ViewData["Title"] = "Crud";
+}
+<h2 class="text-xl font-bold">@Model.Head</h2>
+<hr />
+<div class="flex flex-wrap ">
+    <div class="md:w-1/3 pr-4 pl-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-red-600"></div>
+            <div class="mb-4">
+                <input readonly asp-for="SelectedCat.Id" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" />
+                <span asp-validation-for="SelectedCat.Id" class="text-red-600"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="SelectedCat.Name" class="control-label"></label>
+                <input asp-for="SelectedCat.Name" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" />
+                <span asp-validation-for="SelectedCat.Name" class="text-red-600"></span>
+            </div>
+            <div class="mb-4">
+                <input type="submit" value="@Model.Text" class="inline-block rounded-full align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline @Model.Class text-white" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="List">Back to List</a>
+</div>
+

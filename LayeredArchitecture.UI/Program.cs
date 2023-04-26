@@ -1,4 +1,9 @@
 using LayeredArchitecture.DAL;
+using LayeredArchitecture.ENT;
+using LayeredArchitecture.REP.Abstracts;
+using LayeredArchitecture.REP.Concretes;
+using LayeredArchitecture.UI.Models.ViewModel;
+using LayeredArchitecture.UOW;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("LayeredArchitecture")));
+builder.Services.AddScoped<ICatRepos, CatRepos<Categories>>();
+builder.Services.AddScoped<IProdRepos, ProdRepos<Products>>();
+builder.Services.AddScoped<IUow, Uow>();
+builder.Services.AddScoped<CategoriesModel>();
+builder.Services.AddScoped<ProductsModel>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

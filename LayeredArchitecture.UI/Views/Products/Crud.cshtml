@@ -1,0 +1,45 @@
+﻿@model LayeredArchitecture.UI.Models.ViewModel.ProductsModel
+@{
+    ViewData["Title"] = "Crud";
+}
+<h2 class="text-xl font-bold">@Model.Head</h2>
+<hr />
+<div class="flex flex-wrap ">
+    <div class="md:w-1/3 pr-4 pl-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-red-600"></div>
+            <div class="mb-3">
+                <input type="hidden" asp-for="SelectedProducts.Id" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="SelectedProducts.Name" class="control-label"></label>
+                <input asp-for="SelectedProducts.Name" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" />
+                <span asp-validation-for="SelectedProducts.Name" class="text-red-600"></span>
+            </div>
+            <div class="mb-3">
+                <input asp-for="SelectedProducts.Price" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" />
+                <span asp-validation-for="SelectedProducts.Price" class="text-red-600"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="SelectedProducts.CategoryId" class="control-label" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"></label>
+                <select name="SelectedProducts.CategoryId" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    @foreach (var item in Model.Categories)
+                    {
+                        @if (Model.SelectedProducts.CategoryId == item.Id)
+                        {
+                            <option selected value="@item.Id">@item.Name</option>
+
+                        }
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <button type="submit" value="@Model.Text" class="inline-block rounded-full align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline @Model.Class text-white">@Model.Text</button>
+                <a asp-action="List" class="inline-block rounded-full align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-neutral-400 text-white">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+

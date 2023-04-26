@@ -13,10 +13,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LayeredArchitecture.DAL\LayeredArchitecture.DAL.csproj" />
+    <ProjectReference Include="..\LayeredArchitecture.REP\LayeredArchitecture.REP.csproj" />
+    <ProjectReference Include="..\LayeredArchitecture.UOW\LayeredArchitecture.UOW.csproj" />
   </ItemGroup>
 
 </Project>
