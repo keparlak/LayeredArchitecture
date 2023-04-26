@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LayeredArchitecture.DAL\LayeredArchitecture.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

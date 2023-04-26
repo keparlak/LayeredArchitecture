@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LayeredArchitecture.Core\LayeredArchitecture.Core.csproj" />
+    <ProjectReference Include="..\LayeredArchitecture.DTO\LayeredArchitecture.DTO.csproj" />
+  </ItemGroup>
+
 </Project>
