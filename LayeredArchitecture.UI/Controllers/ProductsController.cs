@@ -22,7 +22,7 @@ namespace LayeredArchitecture.UI.Controllers
         {
             model.Head = "Yeni Giriş";
             model.Text = "Kaydet";
-            model.Class = "bg-green-500 hover:bg-green-900";
+            model.Class = "hover:shadow-indigo-500/40 bg-indigo-700 hover:bg-indigo-600 focus:ring-indigo-600";
             model.Categories = uow.catRepos.List();
             return View("Crud", model);
         }
@@ -39,7 +39,7 @@ namespace LayeredArchitecture.UI.Controllers
         {
             model.Head = "Güncelleme";
             model.Text = "Güncelleme";
-            model.Class = "bg-orange-500 hover:bg-orange-900";
+            model.Class = "hover:shadow-orange-500/40 bg-orange-700 hover:bg-orange-600 focus:ring-orange-600";
             model.SelectedProducts = uow.prodRepos.Find(Id);
             model.Categories = uow.catRepos.List();
             return View("Crud", model);

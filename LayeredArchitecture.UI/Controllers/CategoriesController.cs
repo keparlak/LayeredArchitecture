@@ -24,7 +24,7 @@ namespace LayeredArchitecture.UI.Controllers
         {
             model.Head = "Güncelleme";
             model.Text = "Güncelle";
-            model.Class = "bg-orange-600 hover:bg-orange-900";
+            model.Class = "hover:shadow-orange-500/40 bg-orange-700 hover:bg-orange-600 focus:ring-orange-600";
             model.SelectedCat = uow.catRepos.Find(Id);
             return View("Crud", model);
         }
@@ -48,7 +48,7 @@ namespace LayeredArchitecture.UI.Controllers
         {
             model.Head = "Yeni Giriş";
             model.Text = "Kaydet";
-            model.Class = "bg-blue-600 hover:bg-blue-900";
+            model.Class = "hover:shadow-indigo-500/40 bg-indigo-700 hover:bg-indigo-600 focus:ring-indigo-600";
             return View("Crud", model);
         }
 
